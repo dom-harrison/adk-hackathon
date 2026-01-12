@@ -19,3 +19,66 @@ def get_fx_rate(base: str, target: str):
         response = requests.get(api_url)
         if response.status_code == 200:
                 return response.json()
+
+
+def get_transaction_history(partyId: str):
+        """
+        Fetches transaction history for a given party ID.
+
+        Args:
+                partyId: The party ID for which to fetch transaction history.
+
+
+        Returns:
+                A json array of account transactions
+        """
+        
+        # NOTE: This function returns mock data and ignores the partyId for now.
+        transactions = [
+            {
+                "transaction_id": "txn_12345",
+                "date": "2023-10-26T10:30:00Z",
+                "description": "Starbucks",
+                "amount": 4.50,
+                "currency": "GBP",
+                "type": "debit",
+                "category": "Food & Drink"
+            },
+            {
+                "transaction_id": "txn_12346",
+                "date": "2023-10-25T14:15:22Z",
+                "description": "Amazon.com",
+                "amount": 38.99,
+                "currency": "GBP",
+                "type": "debit",
+                "category": "Shopping"
+            },
+            {
+                "transaction_id": "txn_12347",
+                "date": "2023-10-22T09:00:00Z",
+                "description": "Monthly Salary",
+                "amount": 2500.00,
+                "currency": "GBP",
+                "type": "credit",
+                "category": "Income"
+            },
+            {
+                "transaction_id": "txn_12348",
+                "date": "2023-10-20T11:00:00Z",
+                "description": "Tesco Groceries",
+                "amount": 75.50,
+                "currency": "GBP",
+                "type": "debit",
+                "category": "Groceries"
+            },
+            {
+                "transaction_id": "txn_12349",
+                "date": "2023-10-18T18:45:00Z",
+                "description": "Transport for London",
+                "amount": 15.80,
+                "currency": "GBP",
+                "type": "debit",
+                "category": "Transport"
+            }
+        ]
+        return transactions
