@@ -96,7 +96,7 @@ def get_savings_account():
         account_type = [
             {
                 "account_name": "Fixed Saver",
-                "description": "Withdraw any time",
+                "description": "No withdrawal before enddate",
                 "rate": 4.50,
                 "age": "18 and above"
             },

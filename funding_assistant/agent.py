@@ -3,8 +3,6 @@ from google.adk.tools import FunctionTool
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.tools.langchain_tool import LangchainTool
 from .custom_functions import get_fx_rate, get_transaction_history, get_savings_account
-from .custom_agents import google_search_agent
-from .third_party_tools import langchain_wikipedia_tool
 
 transaction_agent = Agent(
     model='gemini-2.5-flash',
@@ -28,11 +26,9 @@ account_type_agent = Agent(
 root_agent = Agent(
     model='gemini-2.5-flash',
     name='root_agent',
-    description='A helpful assistant to help you understand how much you can save and to set up regular savings deposits',
+    description='A helpful assistant to help you understand how much you can save and to set up regular savings accounts',
     tools=[
-        FunctionTool(get_fx_rate),
-        AgentTool(agent=google_search_agent),
-        LangchainTool(langchain_wikipedia_tool),
+        FunctionTool(get_fx_rate)
     ],
     sub_agents=[transaction_agent, account_type_agent]
 )
