@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.tools.langchain_tool import LangchainTool
-from .custom_functions import get_fx_rate, get_transaction_history
+from .custom_functions import get_fx_rate, get_transaction_history, get_savings_account
 from .custom_agents import google_search_agent
 from .third_party_tools import langchain_wikipedia_tool
 
@@ -12,6 +12,15 @@ transaction_agent = Agent(
     description='A sub-agent to fetch customers transaction data. It should look at the credits and debits to see how much the user can save each month',
     tools=[
         FunctionTool(get_transaction_history),
+    ]
+)
+
+account_type_agent = Agent(
+    model='gemini-2.5-flash',
+    name='account_agent',
+    description='This sub agent will return all the active savings product offering',
+    tools=[
+        FunctionTool(get_savings_account),
     ]
 )
 
@@ -25,5 +34,5 @@ root_agent = Agent(
         AgentTool(agent=google_search_agent),
         LangchainTool(langchain_wikipedia_tool),
     ],
-    sub_agents=[transaction_agent]
+    sub_agents=[transaction_agent, account_type_agent]
 )

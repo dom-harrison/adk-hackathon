@@ -82,3 +82,36 @@ def get_transaction_history(partyId: str):
             }
         ]
         return transactions
+
+
+def get_savings_account():
+        """
+        Fetches all the savings account.
+
+        Returns:
+                A json array of account information
+        """
+
+        # NOTE: This function returns mock savings account.
+        account_type = [
+            {
+                "account_name": "Fixed Saver",
+                "description": "Withdraw any time",
+                "rate": 4.50,
+                "age": "18 and above"
+            },
+            {
+                "account_name": "Easy Saver",
+                "description": "Withdraw any time",
+                "rate": 1.50,
+                "age": "18 and above"
+            },
+            {
+                "account_name": "Child Saver",
+                "description": "Withdraw any time",
+                "rate": 1.50,
+                "age": "16 and below"
+
+            }
+        ]
+        return account_type
