@@ -22,7 +22,6 @@ account_type_agent = Agent(
     ]
 )
 
-
 root_agent = Agent(
     model='gemini-2.5-flash',
     name='root_agent',

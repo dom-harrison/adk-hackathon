@@ -23,10 +23,10 @@ This project contains a helpful assistant built with the Google Agent Developmen
     You only need to **create** the environment once per clone. In new terminal sessions, you just need to **activate** it.
     ```bash
     # Create a virtual environment (e.g., named 'venv')
-    python3 -m venv venv
+    uv venv
 
     # Activate the virtual environment
-    source venv/bin/activate
+    source .venv/bin/activate
     ```
     *Note: On Windows, the activation command is `venv\Scripts\activate`.*
 
