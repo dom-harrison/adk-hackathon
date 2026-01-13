@@ -21,12 +21,12 @@ def get_fx_rate(base: str, target: str):
                 return response.json()
 
 
-def get_transaction_history(partyId: str):
+def get_transaction_history():
         """
-        Fetches transaction history for a given party ID.
+        Fetches transaction history for a customer.
 
         Args:
-                partyId: The party ID for which to fetch transaction history.
+                
 
 
         Returns:
@@ -91,22 +91,39 @@ def get_savings_account():
         # NOTE: This function returns mock savings account.
         account_type = [
             {
-                "account_name": "Fixed Saver",
+                "account_name": "Fixed Saver 1 year",
                 "description": "No withdrawal before enddate",
                 "rate": 4.50,
-                "age": "18 and above"
+                "age": "18 and above",
+                "term": "1 year"
+            },
+            {
+                "account_name": "Fixed Saver 2 year",
+                "description": "No withdrawal before enddate",
+                "rate": 4.25,
+                "age": "18 and above",
+                "term": "2 year"
+            },
+            {
+                "account_name": "Fixed Saver 5 year",
+                "description": "No withdrawal before enddate",
+                "rate": 4.10,
+                "age": "18 and above",
+                "term": "5 year"
             },
             {
                 "account_name": "Easy Saver",
                 "description": "Withdraw any time",
                 "rate": 1.50,
-                "age": "18 and above"
+                "age": "18 and above",
+                "term": "1 year"
             },
             {
                 "account_name": "Child Saver",
                 "description": "Withdraw any time",
                 "rate": 1.50,
-                "age": "16 and below"
+                "age": "16 and below",
+                "term": "Until child turns 18"
 
             }
         ]
