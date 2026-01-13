@@ -1,0 +1,42 @@
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:system-ui,Segoe UI,Roboto,Arial;
+  background:#0b0f17; color:#e8eefc;
+}
+.wrap{max-width:900px; margin:0 auto; height:100vh; display:flex; flex-direction:column}
+.top{
+  padding:16px; border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex; justify-content:space-between; align-items:center
+}
+h1{margin:0; font-size:18px}
+.sub{margin:4px 0 0; opacity:.7; font-size:13px}
+.status{display:flex; gap:10px; align-items:center; font-size:13px; opacity:.85}
+.dot{width:10px; height:10px; border-radius:999px; background:#777; display:inline-block}
+
+.chat{
+  flex:1; overflow:auto; padding:16px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.msg{
+  max-width:80%; padding:12px 14px; border-radius:14px;
+  border:1px solid rgba(255,255,255,.08); white-space:pre-wrap; word-break:break-word;
+}
+.user{align-self:flex-end; background:rgba(0,136,255,.18)}
+.bot{align-self:flex-start; background:rgba(255,255,255,.06)}
+
+.bar{
+  display:flex; gap:10px; padding:14px;
+  border-top:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.2);
+}
+.bar input{
+  flex:1; padding:12px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05); color:#e8eefc; outline:none;
+}
+.bar button{
+  padding:12px 16px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,136,255,.35); color:#e8eefc; cursor:pointer;
+}
+.bar button:disabled{opacity:.5; cursor:not-allowed}
