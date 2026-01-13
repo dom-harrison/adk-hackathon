@@ -1,8 +1,9 @@
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
 from google.adk.tools.agent_tool import AgentTool
-from google.adk.tools.langchain_tool import LangchainTool
-from .custom_functions import get_fx_rate, get_transaction_history, get_savings_account
+# from google.adk.tools.langchain_tool import LangchainTool
+from .custom_functions import get_fx_rate, get_savings_account
+from .custom_agents import load_transaction_history_of_user
 
 transaction_agent = Agent(
     model='gemini-2.5-flash',
@@ -13,7 +14,8 @@ transaction_agent = Agent(
         It should look at the credits and debits to see how much the user can save each month
         """,
     tools=[
-        FunctionTool(get_transaction_history),
+        AgentTool(load_transaction_history_of_user),
+        # FunctionTool(get_transaction_history)
     ]
 )
 
